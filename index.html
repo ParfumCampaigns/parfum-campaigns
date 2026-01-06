@@ -3,27 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Parfum Campaigns</title>
-  <meta name="description" content="Independent editorial archive documenting fragrance advertising campaigns, brand imagery, and visual language." />
+  <meta name="description" content="Parfum Campaigns is an independent editorial archive dedicated to the documentation and preservation of fragrance advertising, campaign imagery, and brand visual language." />
 
   <style>
     :root{
-      --bg:#fff;
+      --bg:#ffffff;
       --text:#202122;
       --muted:#54595d;
       --link:#0645ad;
       --link-visited:#0b0080;
       --border:#a2a9b1;
       --panel:#f8f9fa;
-      --panel2:#eaecf0;
       --shadow:0 1px 0 rgba(0,0,0,.08);
       --sidebar:220px;
       --contentMax:980px;
       --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans","Liberation Sans",sans-serif;
-      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
+
     body{
       margin:0;
       font-family:var(--font);
@@ -31,256 +32,260 @@
       background:var(--bg);
       line-height:1.55;
     }
+
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     a:visited{color:var(--link-visited)}
+
     .page{
       display:grid;
       grid-template-columns:var(--sidebar) 1fr;
       min-height:100vh;
     }
+
     aside{
       border-right:1px solid var(--border);
-      padding:12px;
-      background:#fff;
+      padding:16px 12px;
+      font-size:14px;
     }
+
     aside h2{
       font-size:16px;
-      margin:8px 0 6px;
+      margin:0 0 8px 0;
     }
+
     aside input{
       width:100%;
-      padding:6px 8px;
+      padding:6px;
       margin-bottom:12px;
       border:1px solid var(--border);
-      border-radius:2px;
+      font-size:14px;
     }
+
     aside nav a{
       display:block;
       padding:4px 0;
-      font-size:14px;
     }
+
     main{
-      padding:20px;
-    }
-    header{
-      border-bottom:1px solid var(--border);
-      padding-bottom:12px;
-      margin-bottom:16px;
-    }
-    h1{
-      font-size:32px;
-      margin:0 0 6px;
-      font-weight:600;
-    }
-    .subtitle{
-      color:var(--muted);
-      font-size:16px;
-      margin:0;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 260px;
-      gap:20px;
+      padding:24px 32px;
       max-width:var(--contentMax);
     }
-    article{
-      min-width:0;
+
+    h1{
+      font-size:32px;
+      margin:0 0 6px 0;
     }
+
+    .subtitle{
+      color:var(--muted);
+      margin-bottom:16px;
+      font-size:16px;
+    }
+
     .hatnote{
       background:var(--panel);
       border:1px solid var(--border);
-      padding:12px;
-      margin:12px 0 16px;
-      box-shadow:var(--shadow);
-      font-size:14px;
+      padding:12px 14px;
+      margin:18px 0;
     }
-    nav.toc{
-      background:var(--panel2);
+
+    .toc{
+      background:var(--panel);
       border:1px solid var(--border);
-      padding:12px;
-      font-size:14px;
+      padding:12px 14px;
+      margin:18px 0;
     }
-    nav.toc ol{
-      margin:6px 0 0 18px;
-      padding:0;
+
+    .toc-title{
+      font-weight:600;
+      margin-bottom:6px;
     }
+
     section{
-      margin-bottom:28px;
+      margin-top:28px;
     }
+
     section h2{
       border-bottom:1px solid var(--border);
       padding-bottom:4px;
-      margin-bottom:10px;
-      font-size:20px;
     }
+
     .infobox{
+      float:right;
+      width:260px;
       border:1px solid var(--border);
       background:#fff;
-      padding:10px;
+      margin:0 0 16px 24px;
       font-size:14px;
     }
+
     .infobox h3{
-      margin:0 0 8px;
-      font-size:16px;
+      margin:0;
+      padding:8px;
+      background:var(--panel);
+      border-bottom:1px solid var(--border);
       text-align:center;
+      font-size:15px;
     }
+
     .infobox table{
       width:100%;
       border-collapse:collapse;
     }
+
     .infobox td{
-      padding:4px 0;
+      padding:6px 8px;
+      border-bottom:1px solid var(--border);
       vertical-align:top;
     }
-    footer{
-      margin-top:40px;
-      font-size:13px;
+
+    .infobox td:first-child{
       color:var(--muted);
-      max-width:var(--contentMax);
+      width:40%;
+    }
+
+    footer{
+      clear:both;
+      margin-top:40px;
+      padding-top:12px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    @media(max-width:900px){
+      .page{grid-template-columns:1fr}
+      aside{border-right:none;border-bottom:1px solid var(--border)}
+      .infobox{float:none;width:100%;margin:16px 0}
     }
   </style>
 </head>
 
 <body>
-<div class="page">
+  <div class="page">
 
-  <aside>
-    <h2>Parfum Campaigns</h2>
-    <input type="search" placeholder="Search this page…" disabled />
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#mission">Mission</a>
-      <a href="#scope">Scope</a>
-      <a href="#structure">Site structure</a>
-      <a href="#images">Image standards</a>
-      <a href="#seo">SEO standards</a>
-      <a href="#style">Style guide</a>
-      <a href="#changes">Change log</a>
-      <a href="#references">References</a>
-    </nav>
-  </aside>
+    <aside>
+      <h2>Parfum Campaigns</h2>
+      <input type="search" placeholder="Search this page…" />
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#mission">Mission</a>
+        <a href="#scope">Scope</a>
+        <a href="#structure">Site structure</a>
+        <a href="#images">Image standards</a>
+        <a href="#seo">SEO standards</a>
+        <a href="#style">Style guide</a>
+        <a href="#changelog">Change log</a>
+        <a href="#references">References</a>
+      </nav>
+    </aside>
 
-  <main>
-    <header>
+    <main>
       <h1>Parfum Campaigns</h1>
-      <p class="subtitle">Independent editorial archive dedicated to the documentation and preservation of fragrance advertising, campaign imagery, and brand visual language.</p>
-    </header>
+      <p class="subtitle">
+        Independent editorial archive dedicated to the documentation and preservation of fragrance advertising, campaign imagery, and brand visual language.
+      </p>
 
-    <div class="grid">
-      <article>
-
-        <div class="hatnote">
-          Parfum Campaigns functions as a reference system — not a marketplace, not a review platform, and not a promotional outlet. It serves as a single source of structural and visual truth for the archive.
-        </div>
-
-        <nav class="toc">
-          <strong>Contents</strong>
-          <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#scope">Scope</a></li>
-            <li><a href="#structure">Site structure</a></li>
-            <li><a href="#images">Image standards</a></li>
-            <li><a href="#seo">SEO standards</a></li>
-            <li><a href="#style">Style guide</a></li>
-            <li><a href="#changes">Change log</a></li>
-            <li><a href="#references">References</a></li>
-          </ol>
-        </nav>
-
-        <section id="overview">
-          <h2>Overview</h2>
-          <p>
-            Parfum Campaigns is an independent editorial archive focused on documenting fragrance campaign imagery across major houses, independent brands, and historical periods.
-            The archive prioritizes visual structure, compositional intent, and campaign clarity over trend relevance or market performance.
-          </p>
-        </section>
-
-        <section id="mission">
-          <h2>Mission</h2>
-          <p>
-            The mission of Parfum Campaigns is to preserve how fragrance brands communicate identity, authority, and aspiration through visual language.
-            The archive operates independently of commercial incentives, hype cycles, and influencer-driven narratives.
-          </p>
-        </section>
-
-        <section id="scope">
-          <h2>Scope</h2>
-          <p>
-            Coverage includes historical print advertising, billboard campaigns, editorial photography, digital releases, and controlled visual experiments.
-            Inclusion is determined by visual relevance and campaign intent, not popularity or reach.
-          </p>
-        </section>
-
-        <section id="structure">
-          <h2>Site structure</h2>
-          <p>
-            The site is intentionally static, grid-first, and minimal. Navigation is functional rather than expressive, allowing campaign material to remain the primary subject.
-            Stability, clarity, and long-term accessibility take precedence over interactivity.
-          </p>
-        </section>
-
-        <section id="images">
-          <h2>Image standards</h2>
-          <p>
-            Imagery is presented without decorative overlays, simulated context, or interpretive framing.
-            Images function as documentation rather than commentary.
-          </p>
-        </section>
-
-        <section id="seo">
-          <h2>SEO standards</h2>
-          <p>
-            Search visibility is achieved through descriptive structure and factual metadata.
-            The site does not employ tracking scripts, behavioral analytics, or engagement optimization.
-          </p>
-        </section>
-
-        <section id="style">
-          <h2>Style guide</h2>
-          <p>
-            Editorial language is neutral, declarative, and restrained.
-            Parfum Campaigns does not rank, score, endorse, or review products.
-          </p>
-        </section>
-
-        <section id="changes">
-          <h2>Change log</h2>
-          <p>
-            Structural changes are logged when they affect scope, standards, or layout.
-            Content additions do not alter archive policy unless explicitly stated.
-          </p>
-        </section>
-
-        <section id="references">
-          <h2>References</h2>
-          <p>
-            Material is sourced from original brand releases, verified editorial publications, licensed archives, and documented public installations.
-            Attribution is preserved when available.
-          </p>
-        </section>
-
-      </article>
-
-      <aside class="infobox">
+      <div class="infobox">
         <h3>Parfum Campaigns</h3>
         <table>
-          <tr><td><strong>Type</strong></td><td>Independent editorial archive</td></tr>
-          <tr><td><strong>Focus</strong></td><td>Fragrance advertising campaigns</td></tr>
-          <tr><td><strong>Layout</strong></td><td>White background; grid-first</td></tr>
-          <tr><td><strong>Image system</strong></td><td>Descriptive filenames and alt text</td></tr>
-          <tr><td><strong>Hosting</strong></td><td>Static single-page HTML</td></tr>
-          <tr><td><strong>Status</strong></td><td>Active</td></tr>
+          <tr><td>Type</td><td>Independent editorial archive</td></tr>
+          <tr><td>Focus</td><td>Fragrance advertising campaigns</td></tr>
+          <tr><td>Layout</td><td>White background, grid-first</td></tr>
+          <tr><td>Image system</td><td>Descriptive filenames + alt text</td></tr>
+          <tr><td>Hosting</td><td>Static single-page HTML</td></tr>
+          <tr><td>Status</td><td>Active</td></tr>
         </table>
-      </aside>
-    </div>
+      </div>
 
-    <footer>
-      This archive is maintained as a long-term reference document. Structural consistency is prioritized over frequent revision.
-    </footer>
+      <div class="hatnote">
+        This page defines the structural, visual, and editorial standards of the Parfum Campaigns archive. It serves as the single canonical reference for layout, images, SEO conventions, and page composition.
+      </div>
 
-  </main>
-</div>
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ol>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#structure">Site structure</a></li>
+          <li><a href="#images">Image standards</a></li>
+          <li><a href="#seo">SEO standards</a></li>
+          <li><a href="#style">Style guide</a></li>
+          <li><a href="#changelog">Change log</a></li>
+          <li><a href="#references">References</a></li>
+        </ol>
+      </div>
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          Parfum Campaigns is an independent editorial archive focused on documenting fragrance campaign imagery across major houses, independent brands, and historical periods. The archive prioritizes visual structure, compositional intent, and campaign clarity over trend relevance or commercial promotion.
+        </p>
+      </section>
+
+      <section id="mission">
+        <h2>Mission</h2>
+        <p>
+          The mission of Parfum Campaigns is to preserve and contextualize fragrance advertising as a visual and cultural record. The site does not sell products, publish reviews, or participate in affiliate marketing. Its sole function is documentation and reference.
+        </p>
+      </section>
+
+      <section id="scope">
+        <h2>Scope</h2>
+        <p>
+          The archive includes global luxury houses, designer brands, niche perfumers, and historically significant campaigns. Editorial selection is based on visual significance, campaign clarity, and cultural relevance.
+        </p>
+      </section>
+
+      <section id="structure">
+        <h2>Site structure</h2>
+        <p>
+          Parfum Campaigns operates as a static, single-page reference with anchored sections. Campaign entries are organized by brand and product, using consistent grids and standardized metadata.
+        </p>
+      </section>
+
+      <section id="images">
+        <h2>Image standards</h2>
+        <p>
+          All images must use descriptive, SEO-friendly filenames and precise alt text. Decorative imagery is avoided; all images must serve a documentary or structural purpose.
+        </p>
+      </section>
+
+      <section id="seo">
+        <h2>SEO standards</h2>
+        <p>
+          SEO practices emphasize clarity, accuracy, and descriptive naming. No keyword stuffing, tracking scripts, or analytics are used. Indexing is passive and content-driven.
+        </p>
+      </section>
+
+      <section id="style">
+        <h2>Style guide</h2>
+        <p>
+          Editorial tone is neutral, factual, and restrained. The archive avoids hype language, marketing copy, and subjective scoring.
+        </p>
+      </section>
+
+      <section id="changelog">
+        <h2>Change log</h2>
+        <p>
+          Structural or editorial changes to the archive are logged here for transparency and historical reference.
+        </p>
+      </section>
+
+      <section id="references">
+        <h2>References</h2>
+        <p>
+          References may include brand archives, campaign credits, photographer attribution, and historical advertising records.
+        </p>
+      </section>
+
+      <footer>
+        Parfum Campaigns is an independent editorial project. No affiliation with brands listed.
+      </footer>
+    </main>
+
+  </div>
 </body>
 </html>
