@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parfum Campaigns — Wiki</title>
-  <meta name="description" content="A one-page wiki for Parfum Campaigns: mission, standards, layout rules, SEO conventions, and archive structure." />
+  <title>Parfum Campaigns</title>
+  <meta name="description" content="Independent editorial archive documenting fragrance advertising campaigns, brand imagery, and visual language." />
+
   <style>
     :root{
       --bg:#fff;
@@ -15,12 +16,11 @@
       --border:#a2a9b1;
       --panel:#f8f9fa;
       --panel2:#eaecf0;
-      --code:#f6f8fa;
       --shadow:0 1px 0 rgba(0,0,0,.08);
-      --sidebarW: 220px;
-      --contentMax: 980px;
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sidebar:220px;
+      --contentMax:980px;
+      --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans","Liberation Sans",sans-serif;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -31,690 +31,256 @@
       background:var(--bg);
       line-height:1.55;
     }
-    a{color:var(--link); text-decoration:none}
+    a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     a:visited{color:var(--link-visited)}
     .page{
       display:grid;
-      grid-template-columns: var(--sidebarW) 1fr;
+      grid-template-columns:var(--sidebar) 1fr;
       min-height:100vh;
     }
-    /* Sidebar */
-    .sidebar{
+    aside{
       border-right:1px solid var(--border);
-      background:var(--panel);
-      padding:16px 12px;
-      position:sticky;
-      top:0;
-      height:100vh;
-      overflow:auto;
-    }
-    .logo{
-      display:block;
-      font-weight:700;
-      font-size:18px;
-      margin:4px 0 12px;
-      color:var(--text);
-    }
-    .sidebar h3{
-      margin:14px 0 6px;
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.04em;
-      color:var(--muted);
-    }
-    .nav a{
-      display:block;
-      padding:6px 8px;
-      border-radius:4px;
-      color:var(--text);
-    }
-    .nav a:hover{
-      background:var(--panel2);
-      text-decoration:none;
-    }
-    .searchBox{
-      margin:10px 0 14px;
-    }
-    .searchBox input{
-      width:100%;
-      padding:8px 10px;
-      border:1px solid var(--border);
-      border-radius:4px;
+      padding:12px;
       background:#fff;
+    }
+    aside h2{
+      font-size:16px;
+      margin:8px 0 6px;
+    }
+    aside input{
+      width:100%;
+      padding:6px 8px;
+      margin-bottom:12px;
+      border:1px solid var(--border);
+      border-radius:2px;
+    }
+    aside nav a{
+      display:block;
+      padding:4px 0;
       font-size:14px;
     }
-    .smallNote{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:10px;
+    main{
+      padding:20px;
     }
-
-    /* Main */
-    .main{
-      padding:18px 20px 48px;
-    }
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
+    header{
       border-bottom:1px solid var(--border);
-      padding-bottom:10px;
-      margin-bottom:14px;
-    }
-    .topbar .tabs{
-      display:flex;
-      gap:10px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .pill{
-      padding:6px 10px;
-      border:1px solid var(--border);
-      border-bottom:none;
-      background:var(--panel);
-      border-top-left-radius:4px;
-      border-top-right-radius:4px;
-      color:var(--text);
-      box-shadow:var(--shadow);
-    }
-    .content{
-      max-width:var(--contentMax);
+      padding-bottom:12px;
+      margin-bottom:16px;
     }
     h1{
-      font-size:28px;
-      margin:6px 0 6px;
-      font-weight:700;
+      font-size:32px;
+      margin:0 0 6px;
+      font-weight:600;
     }
     .subtitle{
       color:var(--muted);
-      margin:0 0 12px;
-      font-size:14px;
+      font-size:16px;
+      margin:0;
     }
-
-    /* Two-column content area */
     .grid{
       display:grid;
-      grid-template-columns: 1fr 300px;
-      gap:16px;
-      align-items:start;
+      grid-template-columns:1fr 260px;
+      gap:20px;
+      max-width:var(--contentMax);
     }
-
-    /* Infobox */
+    article{
+      min-width:0;
+    }
+    .hatnote{
+      background:var(--panel);
+      border:1px solid var(--border);
+      padding:12px;
+      margin:12px 0 16px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+    }
+    nav.toc{
+      background:var(--panel2);
+      border:1px solid var(--border);
+      padding:12px;
+      font-size:14px;
+    }
+    nav.toc ol{
+      margin:6px 0 0 18px;
+      padding:0;
+    }
+    section{
+      margin-bottom:28px;
+    }
+    section h2{
+      border-bottom:1px solid var(--border);
+      padding-bottom:4px;
+      margin-bottom:10px;
+      font-size:20px;
+    }
     .infobox{
       border:1px solid var(--border);
-      background:var(--panel);
-      padding:10px 10px 12px;
-      font-size:13px;
+      background:#fff;
+      padding:10px;
+      font-size:14px;
     }
-    .infobox .title{
-      font-weight:700;
+    .infobox h3{
+      margin:0 0 8px;
+      font-size:16px;
       text-align:center;
-      margin:2px 0 10px;
     }
     .infobox table{
       width:100%;
       border-collapse:collapse;
     }
-    .infobox th, .infobox td{
-      vertical-align:top;
-      text-align:left;
-      padding:6px 6px;
-      border-top:1px solid #d0d4d8;
-    }
-    .infobox th{
-      width:42%;
-      color:var(--muted);
-      font-weight:600;
-    }
-    .infobox .image{
-      width:100%;
-      height:140px;
-      border:1px solid #d0d4d8;
-      background:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--muted);
-      margin:0 0 10px;
-      font-size:12px;
-    }
-
-    /* TOC */
-    .toc{
-      border:1px solid var(--border);
-      background:var(--panel);
-      padding:10px 12px;
-      margin:12px 0 16px;
-      font-size:14px;
-    }
-    .toc .tocTitle{
-      font-weight:700;
-      margin-bottom:8px;
-    }
-    .toc ol{
-      margin:0 0 0 18px;
-      padding:0;
-    }
-    .toc li{margin:4px 0}
-    .toc a{color:var(--link)}
-
-    /* Sections */
-    .mw-section{
-      margin:0 0 20px;
-    }
-    .mw-section h2{
-      font-size:20px;
-      border-bottom:1px solid var(--border);
-      padding-bottom:4px;
-      margin:18px 0 8px;
-      scroll-margin-top: 70px;
-    }
-    .mw-section h3{
-      font-size:16px;
-      margin:14px 0 6px;
-      scroll-margin-top: 70px;
-    }
-    .hatnote{
-      font-size:13px;
-      color:var(--muted);
-      background:var(--panel);
-      border-left:3px solid var(--border);
-      padding:8px 10px;
-      margin:10px 0 14px;
-    }
-    .quoteBox{
-      border:1px solid var(--border);
-      background:#fff;
-      padding:10px 12px;
-      margin:10px 0 14px;
-    }
-    .quoteBox .q{
-      margin:0;
-      font-style:italic;
-      color:var(--text);
-    }
-
-    /* Tables (wiki-like) */
-    table.wikitable{
-      border:1px solid var(--border);
-      border-collapse:collapse;
-      width:100%;
-      background:#fff;
-      margin:10px 0 14px;
-      font-size:14px;
-    }
-    .wikitable th, .wikitable td{
-      border:1px solid var(--border);
-      padding:8px 10px;
+    .infobox td{
+      padding:4px 0;
       vertical-align:top;
     }
-    .wikitable th{
-      background:var(--panel2);
-      text-align:left;
-      font-weight:700;
-    }
-    code, pre{
-      font-family:var(--mono);
-    }
-    pre{
-      background:var(--code);
-      border:1px solid #d0d7de;
-      padding:10px 12px;
-      overflow:auto;
-      border-radius:6px;
+    footer{
+      margin-top:40px;
       font-size:13px;
-      line-height:1.45;
-    }
-
-    /* References */
-    .ref{
-      font-size:12px;
-      vertical-align:super;
-    }
-    .references{
-      font-size:14px;
-    }
-    .references ol{
-      margin:8px 0 0 18px;
-    }
-    .references li{
-      margin:8px 0;
-    }
-    .backref{
-      font-size:12px;
-      margin-left:6px;
-    }
-
-    /* Collapsible */
-    details{
-      border:1px solid var(--border);
-      background:var(--panel);
-      padding:10px 12px;
-      margin:10px 0 14px;
-    }
-    details summary{
-      cursor:pointer;
-      font-weight:700;
-    }
-
-    /* Footer */
-    .footer{
-      border-top:1px solid var(--border);
-      margin-top:22px;
-      padding-top:12px;
       color:var(--muted);
-      font-size:12px;
-    }
-
-    /* Search highlighting / filtering */
-    mark{
-      background: #fff2a8;
-      padding:0 .1em;
-    }
-    .hidden{display:none!important}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .page{grid-template-columns: 1fr}
-      .sidebar{position:relative; height:auto}
-      .grid{grid-template-columns: 1fr}
+      max-width:var(--contentMax);
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <aside class="sidebar">
-      <a class="logo" href="#top">Parfum Campaigns</a>
+<div class="page">
 
-      <div class="searchBox">
-        <input id="search" type="search" placeholder="Search this page…" aria-label="Search this page" />
-      </div>
+  <aside>
+    <h2>Parfum Campaigns</h2>
+    <input type="search" placeholder="Search this page…" disabled />
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#mission">Mission</a>
+      <a href="#scope">Scope</a>
+      <a href="#structure">Site structure</a>
+      <a href="#images">Image standards</a>
+      <a href="#seo">SEO standards</a>
+      <a href="#style">Style guide</a>
+      <a href="#changes">Change log</a>
+      <a href="#references">References</a>
+    </nav>
+  </aside>
 
-      <h3>Navigation</h3>
-      <nav class="nav" aria-label="Sidebar navigation">
-        <a href="#overview">Overview</a>
-        <a href="#mission">Mission</a>
-        <a href="#scope">Scope</a>
-        <a href="#site-structure">Site structure</a>
-        <a href="#image-standards">Image standards</a>
-        <a href="#seo-standards">SEO standards</a>
-        <a href="#style-guide">Style guide</a>
-        <a href="#change-log">Change log</a>
-        <a href="#references">References</a>
-      </nav>
+  <main>
+    <header>
+      <h1>Parfum Campaigns</h1>
+      <p class="subtitle">Independent editorial archive dedicated to the documentation and preservation of fragrance advertising, campaign imagery, and brand visual language.</p>
+    </header>
 
-      <p class="smallNote">
-        This is a single-file wiki page (HTML). It supports deep links, a TOC, and local search.
-      </p>
-    </aside>
+    <div class="grid">
+      <article>
 
-    <main class="main">
-      <div class="topbar" id="top">
-        <div class="tabs">
-          <span class="pill">Article</span>
-          <span style="align-self:center;">Talk</span>
+        <div class="hatnote">
+          Parfum Campaigns functions as a reference system — not a marketplace, not a review platform, and not a promotional outlet. It serves as a single source of structural and visual truth for the archive.
         </div>
-        <div class="tabs" aria-label="Page tools">
-          <span>Read</span>
-          <span>View source</span>
-          <span>History</span>
-        </div>
-      </div>
 
-      <div class="content">
-        <h1>Parfum Campaigns</h1>
-        <p class="subtitle">Independent editorial archive of fragrance advertising campaigns and brand visuals.</p>
+        <nav class="toc">
+          <strong>Contents</strong>
+          <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#structure">Site structure</a></li>
+            <li><a href="#images">Image standards</a></li>
+            <li><a href="#seo">SEO standards</a></li>
+            <li><a href="#style">Style guide</a></li>
+            <li><a href="#changes">Change log</a></li>
+            <li><a href="#references">References</a></li>
+          </ol>
+        </nav>
 
-        <div class="grid">
-          <article>
+        <section id="overview">
+          <h2>Overview</h2>
+          <p>
+            Parfum Campaigns is an independent editorial archive focused on documenting fragrance campaign imagery across major houses, independent brands, and historical periods.
+            The archive prioritizes visual structure, compositional intent, and campaign clarity over trend relevance or market performance.
+          </p>
+        </section>
 
-            <div class="hatnote">
-              This page documents the standards, structure, and conventions for the Parfum Campaigns site. It is intended to be the single source of truth for layout, images, SEO, and page composition.
-            </div>
+        <section id="mission">
+          <h2>Mission</h2>
+          <p>
+            The mission of Parfum Campaigns is to preserve how fragrance brands communicate identity, authority, and aspiration through visual language.
+            The archive operates independently of commercial incentives, hype cycles, and influencer-driven narratives.
+          </p>
+        </section>
 
-            <nav class="toc" aria-label="Table of contents">
-              <div class="tocTitle">Contents</div>
-              <ol>
-                <li><a href="#overview">Overview</a></li>
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#scope">Scope</a></li>
-                <li><a href="#site-structure">Site structure</a></li>
-                <li><a href="#image-standards">Image standards</a></li>
-                <li><a href="#seo-standards">SEO standards</a></li>
-                <li><a href="#style-guide">Style guide</a></li>
-                <li><a href="#change-log">Change log</a></li>
-                <li><a href="#references">References</a></li>
-              </ol>
-            </nav>
+        <section id="scope">
+          <h2>Scope</h2>
+          <p>
+            Coverage includes historical print advertising, billboard campaigns, editorial photography, digital releases, and controlled visual experiments.
+            Inclusion is determined by visual relevance and campaign intent, not popularity or reach.
+          </p>
+        </section>
 
-            <section class="mw-section" id="overview" data-title="Overview">
-              <h2>Overview</h2>
-              <p>
-                <strong>Parfum Campaigns</strong> is an independent publisher and archive focused on documenting
-                fragrance campaign imagery across major houses and historical periods. The site prioritizes clarity,
-                consistency, and search visibility through disciplined file naming and descriptive alt text.<sup class="ref" id="ref-1"><a href="#note-1">[1]</a></sup>
-              </p>
+        <section id="structure">
+          <h2>Site structure</h2>
+          <p>
+            The site is intentionally static, grid-first, and minimal. Navigation is functional rather than expressive, allowing campaign material to remain the primary subject.
+            Stability, clarity, and long-term accessibility take precedence over interactivity.
+          </p>
+        </section>
 
-              <div class="quoteBox">
-                <p class="q">“Grid-first. White background. No banners. Let the campaign imagery carry the page.”</p>
-              </div>
-            </section>
+        <section id="images">
+          <h2>Image standards</h2>
+          <p>
+            Imagery is presented without decorative overlays, simulated context, or interpretive framing.
+            Images function as documentation rather than commentary.
+          </p>
+        </section>
 
-            <section class="mw-section" id="mission" data-title="Mission">
-              <h2>Mission</h2>
-              <p>
-                The mission is to build a clean, navigable archive of fragrance campaign visuals that remains useful over time:
-                brand-by-brand pages, short contextual descriptors, and image grids that privilege the work itself over decoration.
-              </p>
-            </section>
+        <section id="seo">
+          <h2>SEO standards</h2>
+          <p>
+            Search visibility is achieved through descriptive structure and factual metadata.
+            The site does not employ tracking scripts, behavioral analytics, or engagement optimization.
+          </p>
+        </section>
 
-            <section class="mw-section" id="scope" data-title="Scope">
-              <h2>Scope</h2>
-              <h3 id="included" data-title="Included">Included</h3>
-              <ul>
-                <li>Brand campaign images (print ads, hero visuals, editorial campaign stills)</li>
-                <li>Brand sections with headers + short descriptors</li>
-                <li>Two-up image grids with consistent spacing</li>
-                <li>Images linked to the brand’s official site (or official campaign landing pages)</li>
-              </ul>
+        <section id="style">
+          <h2>Style guide</h2>
+          <p>
+            Editorial language is neutral, declarative, and restrained.
+            Parfum Campaigns does not rank, score, endorse, or review products.
+          </p>
+        </section>
 
-              <h3 id="excluded" data-title="Excluded">Excluded</h3>
-              <ul>
-                <li>Hero banners and large decorative headers</li>
-                <li>Overdesigned backgrounds or heavy theme graphics</li>
-                <li>Affiliate framing, “best-of” listicles, or influencer-style content</li>
-              </ul>
-            </section>
+        <section id="changes">
+          <h2>Change log</h2>
+          <p>
+            Structural changes are logged when they affect scope, standards, or layout.
+            Content additions do not alter archive policy unless explicitly stated.
+          </p>
+        </section>
 
-            <section class="mw-section" id="site-structure" data-title="Site structure">
-              <h2>Site structure</h2>
-              <p>
-                The site is organized as a set of brand sections. Each brand section contains:
-              </p>
+        <section id="references">
+          <h2>References</h2>
+          <p>
+            Material is sourced from original brand releases, verified editorial publications, licensed archives, and documented public installations.
+            Attribution is preserved when available.
+          </p>
+        </section>
 
-              <table class="wikitable">
-                <thead>
-                  <tr>
-                    <th>Element</th>
-                    <th>Requirement</th>
-                    <th>Purpose</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Brand header</td>
-                    <td>Brand name (all caps or title case), followed by a short descriptor line</td>
-                    <td>Scanability and consistent visual hierarchy</td>
-                  </tr>
-                  <tr>
-                    <td>Two-up grid</td>
-                    <td>Two images per row on desktop, single column on mobile</td>
-                    <td>Fast browsing without clutter</td>
-                  </tr>
-                  <tr>
-                    <td>Image link</td>
-                    <td>Each image links to the brand’s official site</td>
-                    <td>Authority signal + user utility</td>
-                  </tr>
-                  <tr>
-                    <td>Alt text</td>
-                    <td>Descriptive, non-decorative, factual</td>
-                    <td>Accessibility + image search relevance</td>
-                  </tr>
-                </tbody>
-              </table>
+      </article>
 
-              <details>
-                <summary>Optional: Single-page vs multi-page</summary>
-                <p>
-                  This wiki page is single-file by design. You can keep Parfum Campaigns as a single long page, or split into brand pages later.
-                  If you split, the same naming and alt-text rules still apply.
-                </p>
-              </details>
-            </section>
+      <aside class="infobox">
+        <h3>Parfum Campaigns</h3>
+        <table>
+          <tr><td><strong>Type</strong></td><td>Independent editorial archive</td></tr>
+          <tr><td><strong>Focus</strong></td><td>Fragrance advertising campaigns</td></tr>
+          <tr><td><strong>Layout</strong></td><td>White background; grid-first</td></tr>
+          <tr><td><strong>Image system</strong></td><td>Descriptive filenames and alt text</td></tr>
+          <tr><td><strong>Hosting</strong></td><td>Static single-page HTML</td></tr>
+          <tr><td><strong>Status</strong></td><td>Active</td></tr>
+        </table>
+      </aside>
+    </div>
 
-            <section class="mw-section" id="image-standards" data-title="Image standards">
-              <h2>Image standards</h2>
-              <p>
-                Images should be selected for clarity, recognizability, and campaign relevance. The visual system is grid-first and white-background.
-              </p>
+    <footer>
+      This archive is maintained as a long-term reference document. Structural consistency is prioritized over frequent revision.
+    </footer>
 
-              <h3 id="filenames" data-title="Filenames">Filenames</h3>
-              <p>
-                Use consistent SEO filenames in this pattern:
-              </p>
-              <pre><code>brand-product-campaign-context.jpg</code></pre>
-
-              <table class="wikitable">
-                <thead>
-                  <tr>
-                    <th>Example filename</th>
-                    <th>Meaning</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><code>armani-acqua-di-gio-campaign-print-ad.jpg</code></td>
-                    <td>Armani / Acqua di Giò / campaign / print ad</td>
-                  </tr>
-                  <tr>
-                    <td><code>creed-bois-du-portugal-1987-vintage-bottle.jpg</code></td>
-                    <td>Creed / Bois du Portugal / 1987 / vintage bottle</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h3 id="alt-text" data-title="Alt text">Alt text</h3>
-              <p>
-                Alt text must be descriptive and factual. Avoid decorative filler or marketing language.
-              </p>
-
-              <table class="wikitable">
-                <thead>
-                  <tr>
-                    <th>Good alt text</th>
-                    <th>Bad alt text</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>“Giorgio Armani Acqua di Giò campaign image with model in coastal setting”</td>
-                    <td>“Sexy luxury vibe photo”</td>
-                  </tr>
-                  <tr>
-                    <td>“Vintage Creed Bois du Portugal bottle (1987) on neutral background”</td>
-                    <td>“Rare amazing bottle”</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <section class="mw-section" id="seo-standards" data-title="SEO standards">
-              <h2>SEO standards</h2>
-              <p>
-                SEO is driven primarily by consistent image metadata (filenames + alt text) and clean, crawlable structure.
-                Keep content straightforward and avoid excessive scripts or trackers.<sup class="ref" id="ref-2"><a href="#note-2">[2]</a></sup>
-              </p>
-
-              <details>
-                <summary>SEO footer (discreet)</summary>
-                <p>
-                  If you use a footer, keep it minimal: one short line describing the archive purpose, plus any required attribution.
-                  Do not add tracking scripts or analytics.
-                </p>
-              </details>
-            </section>
-
-            <section class="mw-section" id="style-guide" data-title="Style guide">
-              <h2>Style guide</h2>
-              <p>
-                The site should read like an archive: restrained, factual, and consistent.
-              </p>
-
-              <table class="wikitable">
-                <thead>
-                  <tr>
-                    <th>Rule</th>
-                    <th>Standard</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Background</td>
-                    <td>White</td>
-                  </tr>
-                  <tr>
-                    <td>Layout</td>
-                    <td>Grid-first, no hero banners</td>
-                  </tr>
-                  <tr>
-                    <td>Copy tone</td>
-                    <td>Short descriptors; avoid hype</td>
-                  </tr>
-                  <tr>
-                    <td>Links</td>
-                    <td>Images link to official brand sites</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <section class="mw-section" id="change-log" data-title="Change log">
-              <h2>Change log</h2>
-              <table class="wikitable">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Change</th>
-                    <th>Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2026-01-05</td>
-                    <td>Initial wiki page created</td>
-                    <td>Established layout, image standards, and SEO conventions</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <section class="mw-section" id="references" data-title="References">
-              <h2>References</h2>
-              <div class="references">
-                <ol>
-                  <li id="note-1">
-                    Archive structure conventions: white background, no hero banners, brand sections with descriptors, two-up grids, and descriptive alt text.
-                    <a class="backref" href="#ref-1">↑ back</a>
-                  </li>
-                  <li id="note-2">
-                    SEO principles: crawlable structure + consistent filenames/alt text; avoid external analytics and heavy scripts.
-                    <a class="backref" href="#ref-2">↑ back</a>
-                  </li>
-                </ol>
-              </div>
-            </section>
-
-            <div class="footer">
-              <div>Text is provided for editorial/archival use. Layout is intentionally minimal and wiki-like.</div>
-              <div>Last updated: 2026-01-05</div>
-            </div>
-
-          </article>
-
-          <aside class="infobox" aria-label="Infobox">
-            <div class="title">Parfum Campaigns</div>
-            <div class="image">Infobox image placeholder</div>
-            <table>
-              <tr><th>Type</th><td>Independent editorial archive</td></tr>
-              <tr><th>Focus</th><td>Fragrance advertising campaigns</td></tr>
-              <tr><th>Layout</th><td>White background; grid-first</td></tr>
-              <tr><th>Image system</th><td>SEO filenames + descriptive alt text</td></tr>
-              <tr><th>Hosting</th><td>Static (single-page HTML)</td></tr>
-              <tr><th>Status</th><td>Active</td></tr>
-            </table>
-
-            <details>
-              <summary>Quick actions</summary>
-              <ul style="margin:10px 0 0 18px;">
-                <li><a href="#image-standards">Go to Image standards</a></li>
-                <li><a href="#seo-standards">Go to SEO standards</a></li>
-                <li><a href="#style-guide">Go to Style guide</a></li>
-              </ul>
-            </details>
-          </aside>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <script>
-    // Simple section search: filters sections by text, highlights matches
-    (function(){
-      const input = document.getElementById('search');
-      const sections = Array.from(document.querySelectorAll('.mw-section'));
-      const originalHTML = new Map();
-
-      function clearHighlights(node){
-        node.querySelectorAll('mark').forEach(m => {
-          const text = document.createTextNode(m.textContent);
-          m.replaceWith(text);
-        });
-      }
-
-      function highlightText(el, query){
-        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
-        const texts = [];
-        while(walker.nextNode()) texts.push(walker.currentNode);
-
-        texts.forEach(t => {
-          const val = t.nodeValue;
-          const idx = val.toLowerCase().indexOf(query);
-          if(idx === -1) return;
-
-          const before = document.createTextNode(val.slice(0, idx));
-          const match = document.createElement('mark');
-          match.textContent = val.slice(idx, idx + query.length);
-          const after = document.createTextNode(val.slice(idx + query.length));
-
-          const frag = document.createDocumentFragment();
-          frag.appendChild(before);
-          frag.appendChild(match);
-          frag.appendChild(after);
-
-          t.parentNode.replaceChild(frag, t);
-        });
-      }
-
-      function run(){
-        const q = (input.value || '').trim().toLowerCase();
-        sections.forEach(sec => {
-          // cache original HTML once
-          if(!originalHTML.has(sec)) originalHTML.set(sec, sec.innerHTML);
-          // reset
-          sec.innerHTML = originalHTML.get(sec);
-
-          if(!q){
-            sec.classList.remove('hidden');
-            return;
-          }
-
-          const text = sec.textContent.toLowerCase();
-          if(text.indexOf(q) === -1){
-            sec.classList.add('hidden');
-          } else {
-            sec.classList.remove('hidden');
-            // highlight inside this section
-            highlightText(sec, q);
-          }
-        });
-      }
-
-      input.addEventListener('input', run);
-    })();
-  </script>
+  </main>
+</div>
 </body>
 </html>
